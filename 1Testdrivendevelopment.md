@@ -60,17 +60,20 @@ Je mehr Code da ist, desto schneller entstehen Bugs. Um zu gucken, wie gut ein T
 * die Menge des codes, der während des Tests ausgeführt wird
 * die Komplexität des Codes
 * wie wichtig der Code für die Domain ist
-Je höher die ersten beiden Punkte, umso schneller entstehen Bugs und je höher der dritte Punkt desto wichtiger ist es den Schutz zu erhöhen. Das heißt kurzer, unwichtiger Code für die Domain muss nicht getestet werden.
+Je stärker ausgeprägt die ersten beiden Punkte sind, umso schneller entstehen Bugs und je stärker ausgeprägt der dritte Punkt ist, desto wichtiger ist es den Schutz zu erhöhen. Das heißt: Kurzer, unwichtiger Code für die Domain muss _nicht_ getestet werden.
 
 #### Die zweite Säule: Ressistenz gegen Refactoring
-Wenn die Tests sich mehr auf den Code beziehen, als auf das Verhalten, dann können "false Positives" auftauchen. Ein false Positive ist ein Test, der meint, es läuft was falsch, obwohl der Code funktioniert. Das kommt häufig zustande, weil sich Namen oder was auf wen zugreift verändert haben. Um die Ressistenz zu erhöhen, darf man "implementation details" nicht testen und nur Verhalten testen.
+Wenn die Tests sich mehr auf den Code beziehen, als auf das Verhalten, dann können "false Positives" auftauchen.
+Ein false Positive ist ein Test, der meint, es läuft was falsch, obwohl der Code funktioniert. 
+Das kommt häufig zustande, weil sich Namen oder "was auf wen zugreift" verändert haben. 
+Um die Ressistenz zu erhöhen, darf man "implementation Details" nicht testen und nur Verhalten testen.
 
 #### Zusammenhang zwischen der ersten und zweiten Säule
 ![protection against regression vs resistance to refactoring](./Diagrams/regressionvsrefactoring)
 Beide zielen darauf ab, die genauigkeit von Tests zu erhöhen.
 
 #### Die dritte Säule: Schnelles Feedback
-Wenn die Tests zu lange laufen, werden sie nichtmehr ausgeführt. Das kann passieren, wenn sie wie Integrationtests zugriffe auf Abhängigkeiten haben oder mehrere Verhaltensweisen auf einmal testen.
+Wenn die Tests zu lange laufen, werden sie nichtmehr ausgeführt. Das kann passieren, wenn sie, wie Integrationtests, Zugriffe auf Abhängigkeiten haben oder mehrere Verhaltensweisen auf einmal testen.
 
 #### Die vierte Säule: Maintainbarkeit
 Wenn Tests zu komplex und schwer verständlich werden, weil sie nicht refactored werden oder wenn Tests starke Abhängigkeiten haben, die immer mit bearbeitet werden müssen, leidet die Maintainbarkeit.
@@ -78,12 +81,14 @@ Wenn Tests zu komplex und schwer verständlich werden, weil sie nicht refactored
 #### Das Zusammespiel der vier Säulen
 Wie gut ein Test ist, lässt sich durch diese Formel schätzen.  
 $\text{Erste Säule} \cdot \text{zweite Säule} \cdot \text{dritte Säule} \cdot \text{vierte Säule} = \text{Wie gut der Test ist}$  
-Dabei gehen die Werte für jede Säule von 0 (nicht vorhanden) bis 1 (perfekt vorhanden). Man sieht schnell, das eine 0 zu einem Gesamtergebnis von 0 führt.
-Das Problem ist, die ersten drei Säulen schließen sich Gegenseitig zum Teil aus. Die erste Säule bedeutet, dass möglichst viel getestet wird, die zweite Säule, dass nur das wichtigste Verhalten getestet wird und die dritte Säule, dass möglichst wenig getestet wird. Nur die vierte Säule sollte immer vorhanden sein.  
+Dabei gehen die Werte für jede Säule von 0 (nicht vorhanden) bis 1 (perfekt vorhanden). Man sieht schnell, das eine einzige 0 zu einem Gesamtergebnis von 0 führt.
+Das Problem ist, die ersten drei Säulen schließen sich Gegenseitig zum Teil aus. 
+Die erste Säule bedeutet, dass möglichst viel getestet wird, die zweite Säule, dass nur das wichtigste Verhalten getestet wird und die dritte Säule, dass möglichst wenig getestet wird. Die ersten drei stehen teilweise im Widerspruch.
+Nur die vierte Säule sollte immer vorhanden sein.  
 Beispiele für Tests die nur zwei Säulen erfüllen: 
 * End-To-End-Tests: Sie haben die erste und zweite Säule, aber nicht die dritte (sie testen alles, aber sind langsam)
 * Mockeries/Triviale Tests: Sie haben die zweite und dritte, nicht aber die erste (sie sind schnell, testen aber nichts wichtiges)
-* "Brittle" Tests: Sie haben die erste und dritte, nicht aber die zweite (sie sind schnell und testen wichtige Dinge, können aber nicht verändert werden)  
+* "Brittle" Tests: Sie haben die erste und dritte, nicht aber die zweite (sie sind schnell und testen wichtige Dinge, funktionieren aber nach Veränderungen des Codes nicht mehr)  
 
 ![drei Säulen](./Diagrams/dreisaeulen)
 Jetzt könnte man denken, alle drei sollten gleich behandelt werden, aber in Wahrheit ist die zweite Säule entweder vorhanden, oder eben nicht. Die Tests testen nämlich entweder das Behaviour(1) oder den Code(0),das heißt die Wahl besteht zwischen der ersten und dritten Säule.  
