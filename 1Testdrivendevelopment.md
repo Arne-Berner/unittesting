@@ -6,7 +6,7 @@ Der Code soll durch Unit tests erweiterbar sein, ohne dass man sich Sorgen mache
 ### Wie viel kostet ein Test?
 Das hängt von vier Faktoren ab:
 * Muss ich den test refactorn, wenn ich den code refactor?
-* Kann ich ihn nach jeder Codeänderung ausführen?
+* Kann ich ihn nach jeder Codeänderung _schnell_ ausführen?
 * Schlägt der Test falsch aus? (Falscher Alarm)
 * Ist der Test einfach zu verstehen?  
 
