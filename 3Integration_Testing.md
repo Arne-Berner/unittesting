@@ -1,7 +1,9 @@
 ## Integration Testing
 ### Was sind Integration Tests?
-__Integration Tests__ sind alle automatisierten Tests, die keine Unit Tests sind. 
-Sie sind besonders ressistent gegen Refactoring, weil sie sich nur mit "unmanaged dependencies" (prozessen, die nicht zu der Anwendung gehören und über die man nicht bestimmen kann) beschäftigen. Das heißt sie prüfen nur die Communication die ganz am __Ende__ raus geht, indem man die Schnittstellen mockt. Dadurch sind sie zwar langsam, geben aber kaum false positives und schützen auch gut gegen regressions, außer der Drittanbieter ändert seinen Prozess.
+__Integration Tests__ sind alle automatisierten Tests, die keine Unit Tests  oder end to end tests sind. 
+Sie sind besonders ressistent gegen Refactoring, weil sie sich nur mit "unmanaged dependencies" (prozessen, die nicht zu der Anwendung gehören und über die man nicht bestimmen kann) beschäftigen. 
+Das heißt sie prüfen nur die Communication die ganz am __Ende__ raus geht, indem man die Schnittstellen mockt. 
+Dadurch sind sie zwar langsam, geben aber kaum false positives und schützen auch gut gegen regressions, außer der Drittanbieter ändert seinen Prozess.
 
 ### Mocks
 Am besten mocked man nur unmangaged dependencies, weil die Kommunikation zwischen managed prozessen nicht wichtig ist und zu brittle tests führt. Außerdem sollten diese unmanaged dependencies wirklich nur am Rand sein.

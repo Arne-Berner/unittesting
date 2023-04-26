@@ -1,12 +1,17 @@
 ## Begrifflichkeiten
 
 ### SUT und Collaborator
-Das System Under Test (SUT) ist der part des Codes, der getestet werden soll. In dem vorigen Beispiel wäre das Customer (Customer kommt auch in act vor). Der Collaborator stellt die nötigen Daten zur Verfügung. Oben wäre das Store (ist im assert block, aber nicht im act block).
+Das System Under Test (SUT) ist der part des Codes, der getestet werden soll. 
+In dem vorigen Beispiel wäre das Customer (Customer kommt auch in act vor). 
+Der Collaborator stellt die nötigen Daten zur Verfügung. 
+Oben wäre das Store (ist im assert block, aber nicht im act block).
 
 ### London vs classical
-London mocked alles was nicht zu einer Klasse gehört. Es besteht völlige Isolation innerhalb der Klasse.
-Classical versucht eine Isolation zwischen Testsystem und Produktionscode herzustellen. Die Tests müssen nur untereinander unabhängig parallel laufen können.
-Zusammenfassung auf Seite 30 (Immutable ist sowas wie Enums, oder Konstanten)
+London mocked alles was nicht zu einer Klasse gehört. 
+Es besteht völlige Isolation innerhalb der Klasse.
+Classical versucht eine Isolation zwischen Testsystem und Produktionscode herzustellen. 
+Die Tests müssen nur untereinander unabhängig parallel laufen können.
+![londonvsclassic](./Diagrams/londonclassic)
 
 ### Blackbox- und Whitebox-Testing
 __Blackbox-Testing__ testet nur die Funktionalität, ohne auf die Implementation zu achten. Sie testet das "Was" und nicht das "Wie".  
