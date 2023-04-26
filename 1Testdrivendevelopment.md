@@ -187,19 +187,3 @@ Als Daumenregel kann man sagen: Wenn man mehr als eine Operation auf einer API a
 ![communicationandbehaviour](./Diagrams/communicationandbehaviour)
 
 Für den External Client ist der Call vom Controller zum User kein Observable behaviour, er möchte nur, dass die Email sich ändert. Wenn wir aber eine Stufe tiefer gehen, ist der Controller der Client für User und somit wird das Verhalten vom User zum Observable Behaviour.
-
-
-### Fragen
-können mehrere Singletons vom Testing framework erstellt werden? Separiert das Testing framework die einzelnen Singletons??
-Was sind die designpatterns object mother und test data builder?
-Wofür brauchen wir einen Viewservice und den anderen Service? Genauso sind die apiservices gefühlt unnötig?
-Warum ist AreaService zum Beispiel public und nicht private? Nur für DI?
-
-### notizen 
-Warum haben wir überall Interfaces für die Klassen? wegen DI? warum brauchen wir DI für ganz normale kleine Hierarchien?
-Wir könnten viele der Errorhandling tests zusammen fassen und in einer Theory abbilden?
-Text fixture sind die Daten, die in den Test gegeben werden. Sie sollten für den Test immer gleichbleibend sein. (Zum Beispiel die SQL Errors)
-Nutzen wir london school im System? Wir haben eigentlich keine Collaborator sondern alles wird gemocked.  
-Unser System läuft über dependency injection. Das heißt überall werden Interfaces angesprochen und Zentral über den DI Countainer verwaltet.  
-Config Dateien können im SUT nur eine Instanz haben, aber im Testsystem für jeden Test neu konfiguriert werden. Es ist nicht nötig, eine configdatein für alle Tests zu nutzen, im Gegensatz zu einer Datenbank.  
-London school mockt dinge weg. Es wird im assert nicht gegen die tatsächliche klasse des collaborators geprüft, sondern nur die Interaktion zwischen dem SUT und dem collaborator. (oben ist klassich)
