@@ -46,15 +46,21 @@ public void Purchase_fails_when_not_enough_inventory()
 Wichtig: Im Setup steht eine andere Funktion als im Assert teil.
 
 ### Hexagonal Architecture
-Die Hexagonal Architecture hat einen äußeren Application Layer, der mit allen anderen Dependencies wie GUI und Datenbanken spricht und einen inneren Domain Layer, in dem die Business Logik steckt. Das Observable Behaviour ist für den Application Layer die Anfragen die vom Externen Client (z.B. GUI/Datenbanken) kommen und im Domain Layer die einzelnen Unterziele, die vom Application Layer kommen. 
+Die Hexagonal Architecture hat einen äußeren Application Layer, der mit allen anderen Dependencies wie GUI und Datenbanken spricht und einen inneren Domain Layer, in dem die Business Logik steckt. 
+Das Observable Behaviour ist für den Application Layer die Anfragen die vom Externen Client (z.B. GUI/Datenbanken) kommen und im Domain Layer die einzelnen Unterziele, die vom Application Layer kommen. 
 
 ![hexagonal](./Diagrams/hexagonal)
 
 ### Styles of unit testing
-Der __Output-Based-Style__ ist an der funktionalen Programmierung angelehnt. Das SUT bekommt einen Input und gibt ohne Nebeneffekte einen Output aus. Dieser Output wird gegen den erwarteten Output getestet. (Wie viel % Rabatt werden gegeben?)  
+Der __Output-Based-Style__ ist an der funktionalen Programmierung angelehnt. 
+Das SUT bekommt einen Input und gibt ohne Nebeneffekte einen Output aus. 
+Dieser Output wird gegen den erwarteten Output getestet. (Wie viel % Rabatt werden gegeben?)  
 Der __State-Based-Style__ kommt in OOP viel vor, weil alle States die durch Nebeneffekte verändert werden, geprüft werden. (Ist das Produkt im Warenkorb Käse?)  
 Der __Communication-Based-Style__ nutzt Mocks, um die Kommunikation zwischen dem SUT und den Collaborators zu testen. (Wurde der Befehl "sendEmail" an das EmailGatewayMock gesendet?)  
-Alle drei Styles sind in der 1. und 3. Säule gleich stark. In der zweiten ist Output>State>Communication die Rangfolge, weil State oftmals mehr in seiner API exposed als Output. Communication style funktioniert nur dann, wenn eine Interaktion zu einem "Drittanwender" gegeben ist, ansonsten führt es zu starren Tests. Die vierte Säule hat die gleiche Rangliste wie die zweite Säule, einfach weil mehr Code entsteht.  
+Alle drei Styles sind in der 1. und 3. Säule gleich stark. 
+In der zweiten ist Output>State>Communication die Rangfolge, weil State oftmals mehr in seiner API exposed als Output. 
+Communication style funktioniert nur dann, wenn eine Interaktion zu einem "Drittanwender" gegeben ist, ansonsten führt es zu starren Tests. 
+Die vierte Säule hat die gleiche Rangliste wie die zweite Säule, einfach weil mehr Code entsteht.  
 
 ### functional programming
 Um den Outputbased Style noch weiter zu treiben, kann man die Funktionalität der Anforderung in eine Klasse stecken und deren Seiteneffekte (also wo bekomme ich den Input her und was mache ich mit dem Output) an den Rand schieben. Das ganze wird dann vom Applicationlayer ummantelt und zusammen geführt. 

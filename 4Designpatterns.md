@@ -13,10 +13,6 @@ Das Transaction Pattern ist eine einfachere Version des Unit of Work Pattern, in
 ### Repository Pattern
 Im Repository Pattern geht es darum, alle Funktionalitäten, die auf die Datenbank zugreifen in ein Repository zu stecken. Nicht nur sind sie zentralisiert, sondern man kann auch direkt die Daten direkt in welche umwandeln, die vom Domain Layer genutzt werden.
 
-### Execute/canExecute Pattern
-
-### Failfast Pattern
-
 ### Object Mother/Test Data Builder
 Das Object Mother Pattern stellt einfach Testdaten in einer simplen Methode mit default Werten für tests bereit. Also etwas in der Richtung  
 ```c#
