@@ -91,15 +91,19 @@ Beispiele für Tests die nur zwei Säulen erfüllen:
 * "Brittle" Tests: Sie haben die erste und dritte, nicht aber die zweite (sie sind schnell und testen wichtige Dinge, funktionieren aber nach Veränderungen des Codes nicht mehr)  
 
 ![drei Säulen](./Diagrams/dreisaeulen)
-Jetzt könnte man denken, alle drei sollten gleich behandelt werden, aber in Wahrheit ist die zweite Säule entweder vorhanden, oder eben nicht. Die Tests testen nämlich entweder das Behaviour(1) oder den Code(0),das heißt die Wahl besteht zwischen der ersten und dritten Säule.  
+Jetzt könnte man denken, alle drei sollten gleich behandelt werden, aber in Wahrheit ist die zweite Säule entweder vorhanden, oder eben nicht. 
+Die Tests testen nämlich entweder das Behaviour(1) oder den Code(0),das heißt die echte Wahl besteht zwischen der ersten und dritten Säule.  
 ![dreisäulenwastun](./Diagrams/3saeulenwastun)
 
 ### Observable Behaviour (Verhalten)
 Observable Behaviour muss eines von zwei Dingen tun:
-* Eine Operation verfügbar machen, die das Ziel des Kunden erreicht. Eine Operation ist eine Methode welche eine Berechnung durchführt oder einen Seiteneffekt hat oder beides.
-* Einen *State* verfügbar machen, der hilft, das Ziel des Kunden zu erreichen. Der *State* ist der derzeitige Zustand des Systems  
+* Eine Operation verfügbar machen, die das Ziel der Benutzenden erreicht. 
+Eine Operation ist eine Methode welche eine Berechnung durchführt, einen Seiteneffekt hat oder beides.
+* Einen *State* verfügbar machen, der hilft, das Ziel der Benutzenden zu erreichen. Der *State* ist der derzeitige Zustand des Systems  
+Die Benutzenden sind in dem Fall jede Person, die deine Schnittstelle benutzt.
+Also auch wir Developer sind Benutzende, wenn wir eine Schnittstelle im Code nutzen.
 
-Oftmals ist die öffentliche API eines Programms auch das Behaviour. In folgenden Code ist auch ein Implementationsdetail teil der öffentlichen API. Normalizename ist nicht das, was der Nutzer möchte, der Nutzer möchte nur den Namen ändern. Es wird der State des Namens über den Setter verfügbar gemacht. Normalizename ist dabei eine Operation.  
+Oftmals ist die öffentliche API eines Programms auch das Behaviour. Im folgenden Code ist auch ein Implementationsdetail Teil der öffentlichen API. Normalizename ist nicht das, was der Nutzer möchte, der Nutzer möchte nur den Namen ändern. Es wird der State des Namens über den Setter verfügbar gemacht. Normalizename ist dabei eine Operation.  
 ```csharp
 public class User
 {
