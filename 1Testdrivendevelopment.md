@@ -197,4 +197,4 @@ Als Daumenregel kann man sagen: Wenn ich mehr als eine Operation auf einer API a
 ### Sichtbares Verhalten (retake)
 ![communicationandbehaviour](./Diagrams/communicationandbehaviour)
 
-Für die außenstehenden Benutzenden ist der Call vom Controller zum User kein sichtbares Verhalten, sie möchten nur, dass die Email sich ändert. Wenn wir aber eine Stufe tiefer gehen, ist benutzt der Controller User und somit wird das Verhalten vom User zum sichtbaren Verhalten für den Controller. Das sichtbare Verhalten verändert sich also je nach perspektive und muss entsprechend getestet werden.
+Für die außenstehenden Benutzenden ist der Call vom Controller zum User kein sichtbares Verhalten, sie möchten nur, dass die Email sich ändert. Wenn wir aber eine Stufe tiefer gehen, benutzt der Controller User und somit wird das Verhalten vom User zum sichtbaren Verhalten für den Controller. Das sichtbare Verhalten verändert sich also je nach perspektive und muss entsprechend getestet werden.
