@@ -71,3 +71,11 @@ Das ist nur nicht immer möglich und sollte auch nur für komplexere Anforderung
 
 ### happy path und edge cases
 Der __Happy Path__ ist, wenn alles so funktioniert, wie es funktionieren soll. Für einen Taschenrechner kann der Happy Path test sein, dass 1+1 die Zahl 2 sein soll. Der __Edge Case__ wäre hier, wenn jemand affe in den Taschenrechner eingibt. Das sollte einen Fehler werfen.
+
+### Fact, Theorie und Memberdata
+Facts, Theories und Memberdata sind xUnit eigene Konstrukte, die auch in anderen Testframeworks unter anderen Namen erscheinen.
+Facts sind Tests, die alles was sie brauchen im Arrange nutzen.
+Wobei Theories  einer Variable mehrere Daten zuweisen können. So werden sehr ähnliche Tests in einem Test vereint. 
+Diese Daten kann ich in der so genannten Inlinedata - oft über dem eigentlichen Test stehend - angegeben. 
+Das wird "parameterized" Tests genannt, weil mehrere Parameter für einen Test übergeben werden. 
+Eine Funktion kann ich aber nicht als "Inlinedata" übergeben. Alle Attribute müssen bereits zur Kompilierzeit bekannt sein. Als abhilfe gegen diese Schwäche können statische Methoden mit nameof() über reflection aufgerufen werden. Die funktionen werden also nicht über ihre Funktionalität, sondern nur ihren Namen aufgerufen und der ist während der Kompilierzeit bekannt.

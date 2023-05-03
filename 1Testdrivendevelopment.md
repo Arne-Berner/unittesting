@@ -52,13 +52,6 @@ __Test Driven Development__ bedeutet, dass diese Anforderung in einem "Failing T
 Dann wird so lange an der Funktion geschrieben, bis der Test nicht mehr fehlschlägt. Abschließend wird refactored, der Code wird also überarbeitet, bis er einfach zu ändern und gut verständlich ist.
 Diese drei Phasen: Test schlägt fehl - in vielen IDEs rot, der Test akzeptiert den Code - grün, und der Code wird überarbeitet - an Ampeln erinnernd oft als gelb bezeichnet, nutze ich für alle Anforderungen. Das sorgt für eine sehr solide Codestruktur und sinnvolle Tests.
 
-### Fact, Theorie und Memberdata
-Facts, Theories und Memberdata sind xUnit eigene Konstrukte, die auch in anderen Testframeworks unter anderen Namen erscheinen.
-Facts sind Tests, die alles was sie brauchen im Arrange nutzen.
-Wobei Theories  einer Variable mehrere Daten zuweisen können. So werden sehr ähnliche Tests in einem Test vereint. 
-Diese Daten kann ich in der so genannten Inlinedata - oft über dem eigentlichen Test stehend - angegeben. 
-Das wird "parameterized" Tests genannt, weil mehrere Parameter für einen Test übergeben werden. 
-Eine Funktion kann ich aber nicht als "Inlinedata" übergeben. Alle Attribute müssen bereits zur Kompilierzeit bekannt sein. Als abhilfe gegen diese Schwäche können statische Methoden mit nameof() über reflection aufgerufen werden. Die funktionen werden also nicht über ihre Funktionalität, sondern nur ihren Namen aufgerufen und der ist während der Kompilierzeit bekannt.
 
 ### Die vier Säulen eines guten Unit tests
 Tests sollten 
