@@ -4,7 +4,7 @@
 Das System Under Test (SUT) ist der part des Codes, der getestet werden soll. 
 In dem vorigen Beispiel wäre das Customer (Customer kommt auch in act vor). 
 Der Collaborator stellt die nötigen Daten zur Verfügung. 
-Oben wäre das Store (ist im assert block, aber nicht im act block).
+Oben wäre der Collaborator "Store" (ist im assert block, aber nicht im act block).
 
 ### London vs classical
 London mocked alles was nicht zu einer Klasse gehört. 
