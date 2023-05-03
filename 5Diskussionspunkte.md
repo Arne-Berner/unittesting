@@ -1,7 +1,7 @@
 ## Diskussionpunkte
 
 ### ?Probleme? der Classical School
-Dadurch, dass behaviour getestet wird, anstatt von Klassen, wird es schwierig sehr verzweigte und lange Dependencyschlangen zu testen, die ein Behaviour beinhalten. Aber das ist nur ein Fake-Problem, weil der Test darauf hinweist, das etwas im Code-Design falsch ist. Solche verzweigte Strukturen sollten nicht existieren.  
+Dadurch, dass Vehalten getestet wird, anstatt von Klassen, wird es schwierig sehr verzweigte und lange Dependencyschlangen zu testen, die ein Behaviour beinhalten. Aber das ist nur ein Fake-Problem, weil der Test darauf hinweist, das etwas im Code-Design falsch ist. Solche verzweigte Strukturen sollten nicht existieren.  
 Ein weiteres Problem ist, dass ein Fehler zu vielen Failing Tests führen kann. Das ist aber oft durch beheben des einen Fehlers behoben und zeigt an, welcher Teil des Produkts wichtig ist. Außerdem ist es leicht behoben, wenn man häufig testet.
 
 ### Code coverage und branch coverage
