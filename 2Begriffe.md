@@ -47,7 +47,7 @@ Wichtig: Im Setup steht eine andere Funktion als im Assert teil.
 
 ### Hexagonal Architecture
 Die Hexagonal Architecture hat einen äußeren Application Layer, der mit allen anderen Dependencies wie GUI und Datenbanken spricht und einen inneren Domain Layer, in dem die Business Logik steckt. 
-Das Observable Behaviour ist für den Application Layer die Anfragen die vom Externen Client (z.B. GUI/Datenbanken) kommen und im Domain Layer die einzelnen Unterziele, die vom Application Layer kommen. 
+Das sichtbare Verhalten ist für den Application Layer die Anfragen die vom Externen Client (z.B. GUI/Datenbanken) kommen. Im Domain Layer ist das sichtbare Verhalten die einzelnen Unterziele, die vom Application Layer kommen. 
 
 ![hexagonal](./Diagrams/hexagonal)
 
