@@ -55,7 +55,7 @@ Diese drei Phasen: Test schlägt fehl - in vielen IDEs rot, der Test akzeptiert 
 
 ### Die vier Säulen eines guten Unit tests
 Tests sollten 
-1. gegen bugs schützen
+1. gegen regressionen (Fehler, die nach Veränderungen auftreten) schützen
 2. ressistent gegens refactoring sein
 3. schnelles Feedback geben
 4. maintainbar sein
