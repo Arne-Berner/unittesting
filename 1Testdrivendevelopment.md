@@ -67,6 +67,7 @@ Vorallem Bugs die ich schwieriger finden werde, weil das System komplexer wird. 
 * die Menge des Codes, der während des Tests ausgeführt wird
 * die Komplexität des Codes
 * wie wichtig der Code für die Domain ist  
+
 Je stärker ausgeprägt die ersten beiden Punkte sind, umso schneller entstehen Bugs und je stärker ausgeprägt der dritte Punkt ist, desto wichtiger ist es den Schutz zu erhöhen. Das heißt: Kurzer, unwichtiger Code für die Domain muss _nicht_ getestet werden.
 
 #### Die zweite Säule: Ressistenz gegen Refactoring
